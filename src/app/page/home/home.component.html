@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    
+  </div>
+
+  <div class="listContainer">
+  <div class="col" style="width: 70%;" >
+    <div class="col" *ngFor="let pokemon of pokemonList.pokemon"> 
+      <pokemon-cell name="{{pokemon.name}}" image="{{pokemon.img}}"></pokemon-cell>
+    </div>
+  </div>
+</div>
