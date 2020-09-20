@@ -1,12 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-    
-  </div>
+  <h1 style="margin-top: 2%;">POKEMON</h1>
 
+  <input style="background-color: transparent;
+  color: white; 
+  border-radius: 5%; 
+  border: 1px solid aqua;
+  width: 20%;
+  border-radius: 4px;" #inp ng-model="searchText" (keyup)="functionToCallOnKeyUp(inp.value)"  type="search" FormControlName="title"  name="name"placeholder="Enter search term here"/>
+
+    
+</div>
   <div class="listContainer">
-  <div class="col" style="width: 70%;" >
-    <div class="col" *ngFor="let pokemon of pokemonList.pokemon"> 
-      <pokemon-cell name="{{pokemon.name}}" image="{{pokemon.img}}"></pokemon-cell>
+    <div style="width: 70%;">
+      <div class="row itemsBlock">
+
+        <div *ngFor="let pokemon of (pokemonArray | myfilter:searchText)" class="col-md-4 col-sm-5 col-11">
+          <pokemon-cell name="{{pokemon.name}}" image="{{pokemon.img}}" id="{{pokemon.id}}"></pokemon-cell>
+        </div>
+
     </div>
   </div>
 </div>

@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Pokemon } from 'src/app/model/Pokemon';
 import { PokemonList } from 'src/app/model/PokemonList';
-
+import { Constant } from 'src/assets/Constant';
 
 @Component({
   selector: 'app-root',
@@ -9,25 +10,30 @@ import { PokemonList } from 'src/app/model/PokemonList';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  title = 'pokemon-ui-angular';
-  pokemonList:PokemonList
+  pokemonList:PokemonList;
+  pokemonArray: Pokemon[];
+  pokemonArray_Original:Pokemon[];
+  searchText="";
+ 
   constructor(private http : HttpClient) {
     this.buscaPokemon()
   }
 
-  buscaPokemon() {
-    this.http.get("https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json")
-              .subscribe(
-                response => {
-                  this.pokemonList = response;
-                  console.log(this.pokemonList.pokemon)
-                },
-                erro => {
-                  if(erro.status == 400) {
-                    console.log(erro);
-                  }
-                }
-              );
+  functionToCallOnKeyUp(event){
+    this.searchText = event
   }
-  
+
+  buscaPokemon() {
+    this.http.get(Constant.url).subscribe(
+        response => {
+          this.pokemonList = response;
+          this.pokemonArray = this.pokemonList.pokemon;
+        },
+        erro => {
+          if(erro.status == 400) {
+              console.log(erro);
+          }
+        }
+    );
+  }
 }
