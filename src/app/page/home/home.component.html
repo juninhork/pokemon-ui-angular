@@ -16,7 +16,9 @@
       <div class="row itemsBlock">
 
         <div *ngFor="let pokemon of (pokemonArray | myfilter:searchText)" class="col-md-4 col-sm-5 col-11">
-          <pokemon-cell name="{{pokemon.name}}" image="{{pokemon.img}}" id="{{pokemon.id}}"></pokemon-cell>
+          <div (click)="detailPokemon(pokemon)">
+            <pokemon-cell name="{{pokemon.name}}" image="{{pokemon.img}}" id="{{pokemon.id}}"></pokemon-cell>
+          </div>
         </div>
 
     </div>
