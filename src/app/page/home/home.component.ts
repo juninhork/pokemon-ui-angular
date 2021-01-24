@@ -25,6 +25,7 @@ export class HomeComponent {
   }
 
   detailPokemon(pokemon:Pokemon){
+    console.warn(pokemon)
     // this.router.navigateByUrl('/user');
   }
 

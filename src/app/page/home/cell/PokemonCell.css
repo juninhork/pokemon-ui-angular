@@ -1,0 +1,14 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 195, 255);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    border-color:rgba(0, 195, 255);
+    border-style: groove;
+    border: 1;
+    background-color: rgba(0, 195, 255,0.1);
+    margin: 5%;
+    padding: 10%;
+    height: 80%;
+    width: 80%;
+    justify-content: center;
+  }
