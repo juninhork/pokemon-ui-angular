@@ -1,14 +1,28 @@
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 195, 255);
+    box-shadow: 0 4px 8px 0 rgb(199, 199, 199);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
-    border-color:rgba(0, 195, 255);
+    border-color:rgb(199, 199, 199);
     border-style: groove;
     border: 1;
-    background-color: rgba(0, 195, 255,0.1);
+    background-color: rgba(199, 199, 199, 0.137);
     margin: 5%;
-    padding: 10%;
+    /* padding: 10%; */
     height: 80%;
     width: 80%;
     justify-content: center;
+    align-items: center;
   }
+
+.image-pokemon{
+  height: 50%;
+  width: 50%;
+  align-items: center;
+}
+
+.description{
+  background-color:  rgb(161, 161, 161);
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
